@@ -36,5 +36,12 @@ module.exports = {
   rules: {
     // add specific rules configurations here
     '@typescript-eslint/no-unnecessary-condition': 'off',
+    'unicorn/filename-case': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+    'react/function-component-definition': [
+      'warn',
+      { namedComponents: ['arrow-function', 'function-declaration'] },
+    ],
   },
 }

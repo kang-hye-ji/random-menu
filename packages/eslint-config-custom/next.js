@@ -39,5 +39,10 @@ module.exports = {
   rules: {
     'import/no-default-export': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
+    'react/function-component-definition': [
+      'warn',
+      { namedComponents: ['arrow-function', 'function-declaration'] },
+    ],
+    '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
   },
 }
