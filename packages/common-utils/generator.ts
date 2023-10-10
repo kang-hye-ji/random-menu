@@ -16,3 +16,14 @@ export const generateNumArray = ({
 }: GenerateNumArrayParams): number[] => {
   return Array.from({ length }, (_, i) => i + start)
 }
+
+type GenerateRandomNumberParams = {
+  min?: number
+  max?: number
+}
+export const generateRandomNumber = ({
+  min = 1,
+  max = 10,
+}: GenerateRandomNumberParams): number => {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
