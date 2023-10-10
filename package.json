@@ -15,12 +15,5 @@
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.6.10",
-  "name": "random-menu",
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --cache --max-warnings=0",
-      "tsc --noEmit"
-    ],
-    "*.{ts,tsx,css,md}": "prettier --write"
-  }
+  "name": "random-menu"
 }

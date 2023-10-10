@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "generate:component": "turbo gen react-component"
+    "generate:component": "turbo gen react-component",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "common-utils": "workspace:*"

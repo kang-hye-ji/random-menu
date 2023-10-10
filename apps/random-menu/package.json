@@ -6,15 +6,17 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:page": "turbo gen page",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "common-utils": "workspace:*",
+    "common-ui": "workspace:*",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "recoil": "^0.7.7",
-    "ui": "workspace:*"
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
