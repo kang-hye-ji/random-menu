@@ -1,0 +1,9 @@
+/* 참고 사이트: https://foolishdeveloper.com/animated-bubbles-background-css/ */
+.bubbles {
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+}
