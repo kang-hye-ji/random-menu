@@ -7,13 +7,13 @@ function BackgroundSparklingComponent(): JSX.Element {
 
   return (
     <>
-      {sparkles.map((index) => (
+      {sparkles.map((value) => (
         <div
           className={generateClasses([
             styles.sparkles,
-            styles[`sparkle-${index}`],
+            styles[`sparkle-${value}`],
           ])}
-          key={`background-sparkling-sparkle-${index}`}
+          key={`background-sparkling-sparkle-${value}`}
         />
       ))}
     </>
