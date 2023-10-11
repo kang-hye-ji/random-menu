@@ -4,6 +4,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "lint:css": "stylelint '**/*.css'",
     "generate:component": "turbo gen react-component",
     "prepare": "husky install"
   },
@@ -13,7 +14,10 @@
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "tsconfig": "workspace:*",
-    "turbo": "latest"
+    "turbo": "latest",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-idiomatic-order": "^9.0.0"
   },
   "packageManager": "pnpm@8.6.10",
   "name": "random-menu"
