@@ -1,2 +1,2 @@
-// component exports
 export * from './background'
+export * from './spinners'
