@@ -43,6 +43,21 @@ module.exports = {
       'warn',
       { namedComponents: ['arrow-function', 'function-declaration'] },
     ],
+    'unicorn/filename-case': [
+      'warn',
+      {
+        cases: {
+          kebabCase: true,
+          pascalCase: true,
+        },
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { optionalDependencies: [`${__dirname}/src`] },
+    ],
+    'no-alert': 'off',
     '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+    '@typescript-eslint/no-floating-promises': ['error', { ignoreIIFE: true }],
   },
 }
