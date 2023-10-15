@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
+    "lint:es": "eslint '**/*.{ts,tsx}' --max-warnings=0",
     "generate:component": "turbo gen react-component",
     "type-check": "tsc --noEmit"
   },

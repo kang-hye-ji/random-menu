@@ -3,22 +3,21 @@ const MODULES = [
   { name: 'common-utils', parent: 'packages' },
   { name: 'common-ui', parent: 'packages' },
 ]
-const typeCheckConfigs = MODULES.reduce(
+const checkLintAndType = MODULES.reduce(
   (prev, { name, parent }) => ({
     ...prev,
-    [`./${parent}/${name}/**/*.{ts,tsx}`]: () =>
+    [`./${parent}/${name}/**/*.{ts,tsx}`]: () => [
+      `pnpm run --filter ${name} lint:test`,
       `pnpm run --filter ${name} type-check`,
+    ],
   }),
   {},
 )
 
 export default {
-  // linting
-  '*.{ts,tsx}': 'eslint --cache --max-warnings=0',
-
   // formatting
   '*.{ts,tsx,css,md}': 'prettier --write',
 
-  // type check
-  ...typeCheckConfigs,
+  // linting & type check
+  ...checkLintAndType,
 }
