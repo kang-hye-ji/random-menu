@@ -5,6 +5,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "lint:css": "stylelint '**/*.css'",
+    "generate:page": "turbo gen page",
     "generate:component": "turbo gen react-component",
     "prepare": "husky install"
   },
