@@ -1,18 +1,19 @@
+import type { SWRResponse } from 'swr'
 import useSWR from 'swr'
-import { STORE } from '@/contants/store'
+import { SWR_STORE } from '@/contants/store'
 import { getNearRestaurants } from '@/services/map/MapService'
 import type { Categories } from '@/types/categories'
 
-type UseNearRestaurants = {
-  data: google.maps.places.PlaceResult[] | null | undefined
-}
+type NearRestaurantsData = google.maps.places.PlaceResult[] | null | undefined
+type UseNearRestaurants = SWRResponse<NearRestaurantsData, unknown>
+
 export const useNearRestaurants = (
   category?: Categories,
 ): UseNearRestaurants => {
-  const { data } = useSWR<UseNearRestaurants['data']>(
-    STORE.MAP.KEYS.NearRestaurants,
+  const response = useSWR<NearRestaurantsData, unknown>(
+    SWR_STORE.MAP.KEYS.NearRestaurants,
     (key: string) => getNearRestaurants({ key, category }),
   )
 
-  return { data }
+  return response
 }
