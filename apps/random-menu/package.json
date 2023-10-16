@@ -12,8 +12,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "common-utils": "workspace:*",
     "common-ui": "workspace:*",
+    "common-utils": "workspace:*",
+    "lodash": "^4.17.21",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
     "@types/google.maps": "^3.54.3",
+    "@types/lodash": "^4.14.199",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
