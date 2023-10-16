@@ -7,7 +7,9 @@ type GetNearRestaurantsParams = {
   key: string
   category?: Categories
 }
+
 const RADIUS = 1000
+
 export const getNearRestaurants: Fetcher<
   google.maps.places.PlaceResult[] | null,
   GetNearRestaurantsParams
@@ -27,9 +29,13 @@ export const getNearRestaurants: Fetcher<
     placeService.nearbySearch(request, (results, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         resolve(results)
-        return
+      } else if (
+        status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS
+      ) {
+        resolve(null)
+      } else {
+        reject(Error('Failed Get Near Restaurants'))
       }
-      reject(Error('Failed Get Near Restaurants'))
     })
   })
 }
