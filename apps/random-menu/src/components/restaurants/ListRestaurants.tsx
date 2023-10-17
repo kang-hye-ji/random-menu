@@ -28,7 +28,11 @@ const ListRestaurants = (): JSX.Element | null => {
     <div className={styles['list-restaurants-wrapper']}>
       <div style={{ position: 'relative' }}>
         <p className={styles['list-restaurants-title']}>짜잔</p>
-        <Link className={styles['pick-button']} href="/restaurants/pick">
+        <Link
+          className={styles['pick-button']}
+          href="/restaurants/pick"
+          replace
+        >
           하나만 골라줘?
         </Link>
       </div>
