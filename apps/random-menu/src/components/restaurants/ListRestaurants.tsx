@@ -1,3 +1,4 @@
+'use client'
 import { memo, useEffect } from 'react'
 import { sampleSize } from 'lodash'
 import { useRecoilState } from 'recoil'

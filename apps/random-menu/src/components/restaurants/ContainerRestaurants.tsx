@@ -1,3 +1,4 @@
+'use client'
 import MapStore from '@/store/map'
 import EmptyRestaurants from './EmptyRestaurants'
 import SpinnerRestaurants from './SpinnerRestaurants'
