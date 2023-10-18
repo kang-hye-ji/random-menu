@@ -1,10 +1,14 @@
 import { memo, useCallback } from 'react'
 import { generateClasses } from 'common-utils'
+import { useSearchParams } from 'next/navigation'
 import MapStore from '@/store/map'
+import type { Categories } from '@/types/categories'
 import styles from './ErrorRestaurants.module.css'
 
 const ErrorRestaurants = (): JSX.Element => {
-  const { mutate } = MapStore.useNearRestaurants()
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category') as Categories
+  const { mutate } = MapStore.useNearRestaurants(category)
 
   const handleRefresh = useCallback(() => {
     ;(async () => {

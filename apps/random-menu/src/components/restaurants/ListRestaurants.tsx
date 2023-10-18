@@ -3,13 +3,17 @@ import { memo, useEffect } from 'react'
 import { sampleSize } from 'lodash'
 import { useRecoilState } from 'recoil'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import MapStore from '@/store/map'
 import RestaurantStore from '@/store/restaurant'
+import type { Categories } from '@/types/categories'
 import RestaurantItem from './RestaurantItem'
 import styles from './ListRestaurants.module.css'
 
 const ListRestaurants = (): JSX.Element | null => {
-  const { data } = MapStore.useNearRestaurants()
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category') as Categories
+  const { data } = MapStore.useNearRestaurants(category)
   const [selectedRestaurants, setSelectedRestaurants] = useRecoilState(
     RestaurantStore.selectedRestaurantsAtom,
   )
