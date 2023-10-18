@@ -16,7 +16,7 @@ const RestaurantItem = ({ item, animation }: Props): JSX.Element => {
     <div
       className={generateClasses([
         styles['restaurant-box'],
-        animation ? styles.animation : '',
+        animation ? 'rm-jump' : '',
       ])}
     >
       <Image
