@@ -1,0 +1,22 @@
+.words-wrapper {
+  width: 100px;
+  height: 50px;
+}
+
+.words-wrapper > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  color: var(--color-secondary);
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.is-visible {
+  position: relative;
+  opacity: 1;
+}
