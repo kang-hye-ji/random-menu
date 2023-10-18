@@ -1,6 +1,6 @@
 import type { SWRResponse } from 'swr'
 import useSWR from 'swr'
-import { SWR_STORE } from '@/contants/store'
+import { SWR_STORE } from '@/constants/store'
 import { getNearRestaurants } from '@/services/map/MapService'
 import type { Categories } from '@/types/categories'
 
