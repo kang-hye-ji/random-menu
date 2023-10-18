@@ -1,0 +1,28 @@
+.picked-category-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.picked-category-text {
+  color: var(--color-secondary);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.go-restaurants-button {
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 80%);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.go-restaurants-button:hover {
+  background: rgb(254 224 149 / 100%);
+  color: var(--color-main);
+  font-weight: bold;
+}
