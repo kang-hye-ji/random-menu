@@ -43,15 +43,7 @@ module.exports = {
       'warn',
       { namedComponents: ['arrow-function', 'function-declaration'] },
     ],
-    'unicorn/filename-case': [
-      'warn',
-      {
-        cases: {
-          kebabCase: true,
-          pascalCase: true,
-        },
-      },
-    ],
+    'unicorn/filename-case': ['off'],
     'import/no-extraneous-dependencies': [
       'error',
       { optionalDependencies: [`${__dirname}/src`] },
