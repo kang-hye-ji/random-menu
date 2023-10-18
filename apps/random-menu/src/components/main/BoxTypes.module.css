@@ -1,0 +1,57 @@
+.box-types {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 56px;
+
+  .category-type,
+  .restaurant-type {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .category-type {
+    margin-right: -20px;
+
+    .label {
+      color: var(--color-secondary);
+    }
+
+    .description {
+      color: white;
+    }
+  }
+
+  .restaurant-type {
+    margin-left: -20px;
+
+    .label {
+      color: var(--color-main);
+    }
+  }
+
+  .contents {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .label {
+      font-size: 28px;
+    }
+
+    .description {
+      margin-top: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  }
+}
