@@ -42,7 +42,7 @@ function BackgroundBubblesComponent({ bubbleCounts = 30 }: Props): JSX.Element {
         ${random(30) + 30}%{
           transform: translate(${random(25) - 25}vw, ${
             random(25) - 25
-          }vh) scale(${(random(10) + 10) * 0.1})
+          }vh) scale(${(random(2) + 2) * 0.1})
         }
       }`)
     })
