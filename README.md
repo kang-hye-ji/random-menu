@@ -1,81 +1,43 @@
-# Turborepo starter
+# 어떤 서비스인가요?
+Google Map API 를 활용해 현재 위치를 기반으로 주변 식당을 랜덤으로 추천해줍니다.
 
-This is an official starter Turborepo.
+<br/>
+<br/>
 
-## Using this example
+# 기능 상세
+### 1. 음식 카테고리 추천
+한식, 일식, 중식 등 음식 카테고리를 랜덤으로 추천해줍니다.<br/>
+나아가 해당 카테고리의 주변 식당 5군데를 추천하고 이 중에서도 1군데를 랜덤 뽑기 할 수 있습니다.
+<br/><br/>
+### 2. 식당 추천
+주변 식당 5군데를 랜덤으로 추천해줍니다. 이 중에 1군데만 랜덤으로 뽑을 수 있습니다.
 
-Run the following command:
+<br/>
+<br/>
 
-```sh
-npx create-turbo@latest
-```
+# API
+### `Geolocation API`
+navigator에 내장된 Geolocation API 를 활용해 현재 위치와 위치 권한 설정 여부를 조회합니다.
+<br/><br/>
+### `Google Map API`
+Google Map API 의 PlaceService 를 통해 특정 위치 기준 반경 1km 이내의 주변 식당을 조회합니다.<br/>
+현재 오픈된 식당을 조회할 수 있으며, 구글 평점, 주소, 식당 이름 등의 상세 내역을 확인할 수 있습니다.
 
-## What's inside?
+<br/><br/>
 
-This Turborepo includes the following packages/apps:
+# 모노레포 구성
+- `random-menu` app과 `common-ui`, `common-utils` package 로 구성되어 있습니다.
+- `common-ui`와 `common-utils`에는 다른 app 이 추가될 경우에도 공통으로 사용 가능한 UI 및 util 을 추가했습니다.
+- `SWRProvider`나 `RecoilProvider`처럼 `random-menu` 앱에 한정된 컴포넌트는 `random-menu`의 `/component/common` 디렉토리 하위에 추가했습니다.
+- 화면별 비즈니스 성격의 컴포넌트들은 `component` 내 해당 페이지 관련 디렉토리에 추가했습니다.
 
-### Apps and Packages
+<br/><br/>
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+# 스토어 구성
+- Map, Restaurant 등 성격별로 store 디렉토리 내부에 스토어를 추가했습니다.
+- `RestaurantStore.selectedRestaurantsAtom` 처럼 스토어 전체를 import 하여 접근 하도록 공통화했습니다. 스토어가 많아질 경우 각 상태가 어떤 스토어로 부터 파생되었는지 헷갈리지 않도록 명시하기 위함입니다.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+<br/><br/>
+# 사용 기술
+`Next.js`, `TypeScript`, `Recoil`, `SWR`, `TurboRepo`, `ESLint`, `Prettier`, `StyleLint`, `Husky`
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
