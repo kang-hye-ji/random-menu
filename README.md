@@ -1,6 +1,10 @@
 # 어떤 서비스인가요?
 Google Map API 를 활용해 현재 위치를 기반으로 주변 식당을 랜덤으로 추천해줍니다.
 
+https://github.com/kang-hye-ji/random-menu/assets/57096771/fe9f7e18-5f99-4a86-8137-784b4342f507
+
+
+
 <br/>
 <br/>
 
