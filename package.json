@@ -14,12 +14,15 @@
     "eslint": "^8.48.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
-    "tsconfig": "workspace:*",
     "turbo": "latest",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-idiomatic-order": "^9.0.0"
   },
-  "packageManager": "pnpm@8.6.10",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "packageManager": "bun@1.0.12",
   "name": "random-menu"
 }
