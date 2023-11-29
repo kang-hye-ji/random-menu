@@ -1,4 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+# TODO: bun.js monorepo 관리 기능 추가 시, lint-staged 재검토 필요
+# bun.js는 모노레포 패키지별로 명령어를 실행할 수 있는 기능이 없어서 각 패키지 디렉토리로 이동해 명령어를 시행해야한다.
+# 하지만 lint-staged 설정 파일에서 change directory를 할 수 없고, 루트에서 eslint 검사를 하면 제대로 동작하지 않는 문제가 있다.
+# 따라서 우선 pre-commit 훅을 중단하고, 추후 monorepo 기능이 추가되면 재검토하도록 하겠다.
+# npx lint-staged
